@@ -27,7 +27,13 @@
                   textAlignment:(NSTextAlignment)alignment
                       textColor:(nonnull UIColor *)color
                            font:(nonnull UIFont *)font {
-    return [UILabel new];
+    UILabel *label = [UILabel new];
+    label.text = NSLocalizedString(text, "");
+    label.textAlignment = alignment;
+    label.textColor = color;
+    label.font = font;
+    label.translatesAutoresizingMaskIntoConstraints = NO;
+    return label;
 }
 
 + (nonnull UILabel *)createWith:(nonnull NSString *)text
