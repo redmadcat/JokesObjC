@@ -19,6 +19,9 @@
 		CEF6D9FD304961360081C24B /* UIColor+JKColor.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF6D9FC304961360081C24B /* UIColor+JKColor.m */; };
 		CEF6DA02304963DD0081C24B /* ViewControllerPreviewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF6DA01304963D50081C24B /* ViewControllerPreviewHelper.swift */; };
 		CEF6DA05304964EC0081C24B /* UIViewController+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF6DA04304964D70081C24B /* UIViewController+Preview.swift */; };
+		CEF6DA083049796F0081C24B /* UILabel+Factory.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF6DA073049796F0081C24B /* UILabel+Factory.m */; };
+		CEF6DA0A30497C940081C24B /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = CEF6DA0930497C940081C24B /* Localizable.xcstrings */; };
+		CEF6DA0D304982830081C24B /* UIStackView+Factory.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF6DA0C304982830081C24B /* UIStackView+Factory.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +45,11 @@
 		CEF6DA01304963D50081C24B /* ViewControllerPreviewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerPreviewHelper.swift; sourceTree = "<group>"; };
 		CEF6DA03304963DF0081C24B /* JokesObjC-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JokesObjC-Bridging-Header.h"; sourceTree = "<group>"; };
 		CEF6DA04304964D70081C24B /* UIViewController+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Preview.swift"; sourceTree = "<group>"; };
+		CEF6DA063049796F0081C24B /* UILabel+Factory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+Factory.h"; sourceTree = "<group>"; };
+		CEF6DA073049796F0081C24B /* UILabel+Factory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Factory.m"; sourceTree = "<group>"; };
+		CEF6DA0930497C940081C24B /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		CEF6DA0B304982830081C24B /* UIStackView+Factory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIStackView+Factory.h"; sourceTree = "<group>"; };
+		CEF6DA0C304982830081C24B /* UIStackView+Factory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIStackView+Factory.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +119,7 @@
 				CEF6D9DA30494B3A0081C24B /* Assets.xcassets */,
 				CEF6D9DB30494B3A0081C24B /* Info.plist */,
 				CEF6D9DD30494B3A0081C24B /* LaunchScreen.storyboard */,
+				CEF6DA0930497C940081C24B /* Localizable.xcstrings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -140,6 +149,10 @@
 				CEF6D9F930495FDC0081C24B /* UIFont+Roboto.m */,
 				CEF6D9FB304961360081C24B /* UIColor+JKColor.h */,
 				CEF6D9FC304961360081C24B /* UIColor+JKColor.m */,
+				CEF6DA063049796F0081C24B /* UILabel+Factory.h */,
+				CEF6DA073049796F0081C24B /* UILabel+Factory.m */,
+				CEF6DA0B304982830081C24B /* UIStackView+Factory.h */,
+				CEF6DA0C304982830081C24B /* UIStackView+Factory.m */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -204,6 +217,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = CEF6D9B230494B220081C24B;
 			minimizedProjectReferenceProxies = 1;
@@ -223,6 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEF6D9E630494B3A0081C24B /* Assets.xcassets in Resources */,
+				CEF6DA0A30497C940081C24B /* Localizable.xcstrings in Resources */,
 				CEF6D9F5304956930081C24B /* Roboto-VariableFont_wdth,wght.ttf in Resources */,
 				CEF6D9F6304956930081C24B /* Roboto-Italic-VariableFont_wdth,wght.ttf in Resources */,
 				CEF6D9E830494B3A0081C24B /* LaunchScreen.storyboard in Resources */,
@@ -236,10 +251,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEF6DA0D304982830081C24B /* UIStackView+Factory.m in Sources */,
 				CEF6DA02304963DD0081C24B /* ViewControllerPreviewHelper.swift in Sources */,
 				CEF6D9EA30494B3A0081C24B /* AppDelegate.m in Sources */,
 				CEF6D9EB30494B3A0081C24B /* main.m in Sources */,
 				CEF6DA05304964EC0081C24B /* UIViewController+Preview.swift in Sources */,
+				CEF6DA083049796F0081C24B /* UILabel+Factory.m in Sources */,
 				CEF6D9EC30494B3A0081C24B /* SceneDelegate.m in Sources */,
 				CEF6D9ED30494B3A0081C24B /* ViewController.m in Sources */,
 				CEF6D9FD304961360081C24B /* UIColor+JKColor.m in Sources */,
@@ -384,6 +401,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 			};
 			name = Debug;
 		};
@@ -439,6 +457,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
