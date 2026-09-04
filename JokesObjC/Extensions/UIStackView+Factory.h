@@ -18,6 +18,14 @@ NS_ASSUME_NONNULL_BEGIN
          alignment:(UIStackViewAlignment)alignment
         andSpacing:(CGFloat)spacing;
 
++ (nonnull UIStackView *)
+    createWithAxis:(UILayoutConstraintAxis)axis
+      distribution:(UIStackViewDistribution)distribution
+         alignment:(UIStackViewAlignment)alignment
+        spacing:(CGFloat)spacing
+    borderWidth:(CGFloat)borderWidth
+   corderRadius:(CGFloat)corderRadius;
+
 @end
 
 NS_ASSUME_NONNULL_END

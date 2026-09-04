@@ -24,4 +24,22 @@
     return stackView;
 }
 
++ (nonnull UIStackView *)
+    createWithAxis:(UILayoutConstraintAxis)axis
+      distribution:(UIStackViewDistribution)distribution
+         alignment:(UIStackViewAlignment)alignment
+        spacing:(CGFloat)spacing
+    borderWidth:(CGFloat)borderWidth
+    corderRadius:(CGFloat)corderRadius {
+    
+    UIStackView *stackView =
+        [UIStackView createWithAxis:axis
+                       distribution:distribution
+                          alignment:alignment
+                         andSpacing:spacing];
+    stackView.layer.borderWidth = borderWidth;
+    stackView.layer.cornerRadius = corderRadius;
+    return stackView;
+}
+
 @end
