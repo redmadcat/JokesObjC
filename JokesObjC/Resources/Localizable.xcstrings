@@ -13,7 +13,24 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Номер шутки"
+            "value" : "Номер"
+          }
+        }
+      }
+    },
+    "JokeTypeTitleKey" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Joke Type"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Тип"
           }
         }
       }
