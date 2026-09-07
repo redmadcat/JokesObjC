@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE135312304EAC5800CA1D87 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = CE135311304EAC5800CA1D87 /* UIView+Extension.m */; };
 		CEF6D9E630494B3A0081C24B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEF6D9DA30494B3A0081C24B /* Assets.xcassets */; };
 		CEF6D9E830494B3A0081C24B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF6D9DD30494B3A0081C24B /* LaunchScreen.storyboard */; };
 		CEF6D9EA30494B3A0081C24B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF6D9D930494B3A0081C24B /* AppDelegate.m */; };
@@ -25,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE135310304EAC5800CA1D87 /* UIView+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		CE135311304EAC5800CA1D87 /* UIView+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		CEF6D9BB30494B220081C24B /* JokesObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JokesObjC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEF6D9D830494B3A0081C24B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CEF6D9D930494B3A0081C24B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -153,6 +156,8 @@
 				CEF6DA073049796F0081C24B /* UILabel+Factory.m */,
 				CEF6DA0B304982830081C24B /* UIStackView+Factory.h */,
 				CEF6DA0C304982830081C24B /* UIStackView+Factory.m */,
+				CE135310304EAC5800CA1D87 /* UIView+Extension.h */,
+				CE135311304EAC5800CA1D87 /* UIView+Extension.m */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -253,6 +258,7 @@
 			files = (
 				CEF6DA0D304982830081C24B /* UIStackView+Factory.m in Sources */,
 				CEF6DA02304963DD0081C24B /* ViewControllerPreviewHelper.swift in Sources */,
+				CE135312304EAC5800CA1D87 /* UIView+Extension.m in Sources */,
 				CEF6D9EA30494B3A0081C24B /* AppDelegate.m in Sources */,
 				CEF6D9EB30494B3A0081C24B /* main.m in Sources */,
 				CEF6DA05304964EC0081C24B /* UIViewController+Preview.swift in Sources */,
