@@ -42,6 +42,18 @@
               textAlignment:NSTextAlignmentRight
                   textColor:[UIColor jkBlackColor]
                        font:[UIFont robotoMedium16]];
+    
+    jokeTypeTitleLabel =
+        [UILabel createWith:@"JokeTypeTitleKey"
+              textAlignment:NSTextAlignmentLeft
+                  textColor:[UIColor jkBlackColor]
+                       font:[UIFont robotoMedium16]];
+    
+    jokeTypeValueLabel =
+        [UILabel createWith:@"---"
+              textAlignment:NSTextAlignmentRight
+                  textColor:[UIColor jkBlackColor]
+                       font:[UIFont robotoMedium16]];
 
     UIStackView *jokeTitleStackView =
     [UIStackView createWithAxis:UILayoutConstraintAxisHorizontal
@@ -77,6 +89,8 @@
         
     [jokeTitleStackView addArrangedSubview:jokeIdTitleLabel];
     [jokeTitleStackView addArrangedSubview:jokeIdValueLabel];
+    [jokeTypeStackView addArrangedSubview:jokeTypeTitleLabel];
+    [jokeTypeStackView addArrangedSubview:jokeTypeValueLabel];
     
     UIStackView *rootStackView =
     [UIStackView createWithAxis:UILayoutConstraintAxisVertical
@@ -99,6 +113,8 @@
     
     [jokeIdTitleLabel.leadingAnchor constraintEqualToAnchor:rootStackView.leadingAnchor constant:16].active = YES;
     [jokeIdValueLabel.trailingAnchor constraintEqualToAnchor:rootStackView.trailingAnchor constant:-16].active = YES;
+    [jokeTypeTitleLabel.leadingAnchor constraintEqualToAnchor:rootStackView.leadingAnchor constant:16].active = YES;
+    [jokeTypeValueLabel.trailingAnchor constraintEqualToAnchor:rootStackView.trailingAnchor constant:-16].active = YES;
     
     [jokeTitleStackView.heightAnchor constraintEqualToConstant:64].active = YES;
     [jokeTypeStackView.heightAnchor constraintEqualToConstant:64].active = YES;
