@@ -11,18 +11,19 @@
 #import "UILabel+Factory.h"
 #import "UIStackView+Factory.h"
 #import "UIView+Extension.h"
+#import "UILabelPadded.h"
 
 @interface ViewController ()
 
 @end
 
 @implementation ViewController {
-    UILabel *jokeIdTitleLabel;
-    UILabel *jokeIdValueLabel;
-    UILabel *jokeTypeTitleLabel;
-    UILabel *jokeTypeValueLabel;
-    UILabel *jokeSetupTitleLabel;
-    UILabel *jokeSetupValueLabel;
+    UILabelPadded *jokeIdTitleLabel;
+    UILabelPadded *jokeIdValueLabel;
+    UILabelPadded *jokeTypeTitleLabel;
+    UILabelPadded *jokeTypeValueLabel;
+    UILabelPadded *jokeSetupTitleLabel;
+    UILabelPadded *jokeSetupValueLabel;
     UIButton *jokeRefreshButton;
     UIButton *jokePunchlineButton;
     UIActivityIndicatorView *activityIndicator;
@@ -37,30 +38,35 @@
               textAlignment:NSTextAlignmentLeft
                   textColor:[UIColor jkBlackColor]
                        font:[UIFont robotoMedium16]];
+    jokeIdTitleLabel.padding = UIEdgeInsetsMake(0, 16, 0, 0);
     
     jokeIdValueLabel =
         [UILabel createWith:@"---"
               textAlignment:NSTextAlignmentRight
                   textColor:[UIColor jkBlackColor]
                        font:[UIFont robotoMedium16]];
-    
+    jokeIdValueLabel.padding = UIEdgeInsetsMake(0, 0, 0, 16);
+        
     jokeTypeTitleLabel =
         [UILabel createWith:@"JokeTypeTitleKey"
               textAlignment:NSTextAlignmentLeft
                   textColor:[UIColor jkBlackColor]
                        font:[UIFont robotoMedium16]];
+    jokeTypeTitleLabel.padding = UIEdgeInsetsMake(0, 16, 0, 0);
     
     jokeTypeValueLabel =
         [UILabel createWith:@"---"
               textAlignment:NSTextAlignmentRight
                   textColor:[UIColor jkBlackColor]
                        font:[UIFont robotoMedium16]];
+    jokeTypeValueLabel.padding = UIEdgeInsetsMake(0, 0, 0, 16);
     
     jokeSetupTitleLabel =
         [UILabel createWith:@"JokeSetupTitleKey"
               textAlignment:NSTextAlignmentLeft
                   textColor:[UIColor jkBlackColor]
                        font:[UIFont robotoMedium16]];
+    jokeSetupTitleLabel.padding = UIEdgeInsetsMake(0, 16, 0, 16);
     
     jokeSetupValueLabel =
         [UILabel createWith:@"---"
@@ -68,10 +74,25 @@
                   textColor:[UIColor jkBlackColor]
                        font:[UIFont robotoMedium16]];
     
-    [jokeSetupTitleLabel addBorderTo:Bottom borderWidth:2 borderColor:[UIColor jkBlackColor]];
+    [jokeSetupValueLabel addBorderTo:Top borderWidth:2 borderColor:[UIColor jkBlackColor]];
     [jokeSetupValueLabel addBorderTo:Bottom borderWidth:2 borderColor:[UIColor jkBlackColor]];
-    jokeSetupValueLabel.backgroundColor = [UIColor redColor];
-
+            
+    jokeRefreshButton = [UIButton new];
+    jokeRefreshButton.translatesAutoresizingMaskIntoConstraints = NO;
+    [jokeRefreshButton setImage:[UIImage systemImageNamed:@"arrow.trianglehead.2.clockwise.rotate.90"] forState:UIControlStateNormal];
+    [jokeRefreshButton setTintColor:[UIColor blackColor]];
+    jokeRefreshButton.backgroundColor = [UIColor whiteColor];
+    jokeRefreshButton.layer.borderWidth = 2;
+    jokeRefreshButton.layer.cornerRadius = 8;
+    
+    jokePunchlineButton = [UIButton new];
+    jokePunchlineButton.backgroundColor = [UIColor greenColor];
+    [jokePunchlineButton setTitle:@"Show punchline" forState:UIControlStateNormal];
+    [jokePunchlineButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    jokePunchlineButton.translatesAutoresizingMaskIntoConstraints = NO;
+    jokePunchlineButton.layer.borderWidth = 2;
+    jokePunchlineButton.layer.cornerRadius = 8;
+    
     UIStackView *jokeTitleStackView =
     [UIStackView createWithAxis:UILayoutConstraintAxisHorizontal
                    distribution:UIStackViewDistributionFillEqually
@@ -98,20 +119,25 @@
     
     UIStackView *jokeActionStackView =
     [UIStackView createWithAxis:UILayoutConstraintAxisHorizontal
-                   distribution:UIStackViewDistributionFillEqually
+                   distribution:UIStackViewDistributionFill
                       alignment:UIStackViewAlignmentFill
-                        spacing:5.0
+                        spacing:24.0
                     borderWidth:0.0
                    corderRadius:0.0];
     
     [jokeTitleStackView addArrangedSubview:jokeIdTitleLabel];
     [jokeTitleStackView addArrangedSubview:jokeIdValueLabel];
+    
     [jokeTypeStackView addArrangedSubview:jokeTypeTitleLabel];
     [jokeTypeStackView addArrangedSubview:jokeTypeValueLabel];
-    
+        
+    UIView *view = [UIView new];
     [jokeSetupStackView addArrangedSubview:jokeSetupTitleLabel];
     [jokeSetupStackView addArrangedSubview:jokeSetupValueLabel];
-    [jokeSetupStackView addArrangedSubview:[UIView new]];
+    [jokeSetupStackView addArrangedSubview:view];
+    
+    [jokeActionStackView addArrangedSubview:jokeRefreshButton];
+    [jokeActionStackView addArrangedSubview:jokePunchlineButton];
     
     UIStackView *rootStackView =
     [UIStackView createWithAxis:UILayoutConstraintAxisVertical
@@ -134,28 +160,20 @@
         [rootStackView.topAnchor constraintEqualToAnchor:guide.topAnchor constant:48],
         [rootStackView.bottomAnchor constraintEqualToAnchor:guide.bottomAnchor constant:-48],
         
-        [jokeIdTitleLabel.leadingAnchor constraintEqualToAnchor:rootStackView.leadingAnchor constant:16],
-        [jokeIdValueLabel.trailingAnchor constraintEqualToAnchor:rootStackView.trailingAnchor constant:-16],
-        [jokeTypeTitleLabel.leadingAnchor constraintEqualToAnchor:rootStackView.leadingAnchor constant:16],
-        [jokeTypeValueLabel.trailingAnchor constraintEqualToAnchor:rootStackView.trailingAnchor constant:-16],
-        
-        [jokeSetupTitleLabel.leadingAnchor constraintEqualToAnchor:jokeSetupStackView.leadingAnchor constant:16],
-        [jokeSetupTitleLabel.trailingAnchor constraintEqualToAnchor:jokeSetupStackView.trailingAnchor constant:-16],
-        
-        [jokeSetupValueLabel.leadingAnchor constraintEqualToAnchor:jokeSetupStackView.leadingAnchor constant:16],
-        [jokeSetupValueLabel.trailingAnchor constraintEqualToAnchor:jokeSetupStackView.trailingAnchor constant:-16],
-        [jokeSetupValueLabel.bottomAnchor constraintEqualToAnchor:jokeSetupStackView.bottomAnchor constant:-24],
-        [jokeSetupValueLabel.topAnchor constraintEqualToAnchor:jokeSetupTitleLabel.bottomAnchor],
-            
-        [jokeSetupTitleLabel.heightAnchor constraintEqualToConstant:61],
-        [jokeSetupValueLabel.heightAnchor constraintEqualToConstant:159],
-        
+        [view.heightAnchor constraintEqualToConstant:24],
         [jokeTitleStackView.heightAnchor constraintEqualToConstant:64],
         [jokeTypeStackView.heightAnchor constraintEqualToConstant:64],
         [jokeSetupStackView.heightAnchor constraintEqualToConstant:244],
         [jokeActionStackView.heightAnchor constraintEqualToConstant:64],
+                
+        [jokeSetupTitleLabel.heightAnchor constraintEqualToConstant:61],
+        [jokeRefreshButton.widthAnchor constraintEqualToConstant:64],
+        
+        [jokeSetupTitleLabel.leadingAnchor constraintEqualToAnchor:jokeSetupStackView.leadingAnchor],
+        [jokeSetupTitleLabel.trailingAnchor constraintEqualToAnchor:jokeSetupStackView.trailingAnchor],
+        [jokeSetupValueLabel.leadingAnchor constraintEqualToAnchor:jokeSetupStackView.leadingAnchor constant:16],
+        [jokeSetupValueLabel.trailingAnchor constraintEqualToAnchor:jokeSetupStackView.trailingAnchor constant:-16],
     ]];
-
 }
 
 - (void)viewDidLayoutSubviews {
