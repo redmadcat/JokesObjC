@@ -128,36 +128,33 @@
     [self.view addSubview:rootStackView];
     UILayoutGuide *guide = self.view.safeAreaLayoutGuide;
     
-    //    [NSLayoutConstraint activateConstraints:@[
-    //
-    //    ]];
+    [NSLayoutConstraint activateConstraints:@[
+        [rootStackView.leadingAnchor constraintEqualToAnchor:guide.leadingAnchor constant:24],
+        [rootStackView.trailingAnchor constraintEqualToAnchor:guide.trailingAnchor constant:-24],
+        [rootStackView.topAnchor constraintEqualToAnchor:guide.topAnchor constant:48],
+        [rootStackView.bottomAnchor constraintEqualToAnchor:guide.bottomAnchor constant:-48],
         
-    [rootStackView.leadingAnchor constraintEqualToAnchor:guide.leadingAnchor constant:24].active = YES;
-    [rootStackView.trailingAnchor constraintEqualToAnchor:guide.trailingAnchor constant:-24].active = YES;
-    [rootStackView.topAnchor constraintEqualToAnchor:guide.topAnchor constant:48].active = YES;
-    [rootStackView.bottomAnchor constraintEqualToAnchor:guide.bottomAnchor constant:-48].active = YES;
-    
-    [jokeIdTitleLabel.leadingAnchor constraintEqualToAnchor:rootStackView.leadingAnchor constant:16].active = YES;
-    [jokeIdValueLabel.trailingAnchor constraintEqualToAnchor:rootStackView.trailingAnchor constant:-16].active = YES;
-    [jokeTypeTitleLabel.leadingAnchor constraintEqualToAnchor:rootStackView.leadingAnchor constant:16].active = YES;
-    [jokeTypeValueLabel.trailingAnchor constraintEqualToAnchor:rootStackView.trailingAnchor constant:-16].active = YES;
-    
-    [jokeSetupTitleLabel.leadingAnchor constraintEqualToAnchor:jokeSetupStackView.leadingAnchor constant:16].active = YES;
-    [jokeSetupTitleLabel.trailingAnchor constraintEqualToAnchor:jokeSetupStackView.trailingAnchor constant:-16].active = YES;
-    
-    [jokeSetupValueLabel.leadingAnchor constraintEqualToAnchor:jokeSetupStackView.leadingAnchor constant:16].active = YES;
-    [jokeSetupValueLabel.trailingAnchor constraintEqualToAnchor:jokeSetupStackView.trailingAnchor constant:-16].active = YES;
-    [jokeSetupValueLabel.bottomAnchor constraintEqualToAnchor:jokeSetupStackView.bottomAnchor constant:-24].active = YES;
-    [jokeSetupValueLabel.topAnchor constraintEqualToAnchor:jokeSetupTitleLabel.bottomAnchor].active = YES;
+        [jokeIdTitleLabel.leadingAnchor constraintEqualToAnchor:rootStackView.leadingAnchor constant:16],
+        [jokeIdValueLabel.trailingAnchor constraintEqualToAnchor:rootStackView.trailingAnchor constant:-16],
+        [jokeTypeTitleLabel.leadingAnchor constraintEqualToAnchor:rootStackView.leadingAnchor constant:16],
+        [jokeTypeValueLabel.trailingAnchor constraintEqualToAnchor:rootStackView.trailingAnchor constant:-16],
         
-    [jokeSetupTitleLabel.heightAnchor constraintEqualToConstant:61].active = YES;
-    [jokeSetupValueLabel.heightAnchor constraintEqualToConstant:159].active = YES;
-    
-    [jokeTitleStackView.heightAnchor constraintEqualToConstant:64].active = YES;
-    [jokeTypeStackView.heightAnchor constraintEqualToConstant:64].active = YES;
-    [jokeSetupStackView.heightAnchor constraintEqualToConstant:244].active = YES;
-    [jokeActionStackView.heightAnchor constraintEqualToConstant:64].active = YES;
-    
+        [jokeSetupTitleLabel.leadingAnchor constraintEqualToAnchor:jokeSetupStackView.leadingAnchor constant:16],
+        [jokeSetupTitleLabel.trailingAnchor constraintEqualToAnchor:jokeSetupStackView.trailingAnchor constant:-16],
+        
+        [jokeSetupValueLabel.leadingAnchor constraintEqualToAnchor:jokeSetupStackView.leadingAnchor constant:16],
+        [jokeSetupValueLabel.trailingAnchor constraintEqualToAnchor:jokeSetupStackView.trailingAnchor constant:-16],
+        [jokeSetupValueLabel.bottomAnchor constraintEqualToAnchor:jokeSetupStackView.bottomAnchor constant:-24],
+        [jokeSetupValueLabel.topAnchor constraintEqualToAnchor:jokeSetupTitleLabel.bottomAnchor],
+            
+        [jokeSetupTitleLabel.heightAnchor constraintEqualToConstant:61],
+        [jokeSetupValueLabel.heightAnchor constraintEqualToConstant:159],
+        
+        [jokeTitleStackView.heightAnchor constraintEqualToConstant:64],
+        [jokeTypeStackView.heightAnchor constraintEqualToConstant:64],
+        [jokeSetupStackView.heightAnchor constraintEqualToConstant:244],
+        [jokeActionStackView.heightAnchor constraintEqualToConstant:64],
+    ]];
 
 }
 
