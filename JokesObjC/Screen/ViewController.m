@@ -10,6 +10,7 @@
 #import "UIFont+Roboto.h"
 #import "UILabel+Factory.h"
 #import "UIStackView+Factory.h"
+#import "UIView+Extension.h"
 
 @interface ViewController ()
 
@@ -54,6 +55,22 @@
               textAlignment:NSTextAlignmentRight
                   textColor:[UIColor jkBlackColor]
                        font:[UIFont robotoMedium16]];
+    
+    jokeSetupTitleLabel =
+        [UILabel createWith:@"JokeSetupTitleKey"
+              textAlignment:NSTextAlignmentLeft
+                  textColor:[UIColor jkBlackColor]
+                       font:[UIFont robotoMedium16]];
+    
+    jokeSetupValueLabel =
+        [UILabel createWith:@"---"
+              textAlignment:NSTextAlignmentLeft
+                  textColor:[UIColor jkBlackColor]
+                       font:[UIFont robotoMedium16]];
+    
+    [jokeSetupTitleLabel addBorderTo:Bottom borderWidth:2 borderColor:[UIColor jkBlackColor]];
+    [jokeSetupValueLabel addBorderTo:Bottom borderWidth:2 borderColor:[UIColor jkBlackColor]];
+    jokeSetupValueLabel.backgroundColor = [UIColor redColor];
 
     UIStackView *jokeTitleStackView =
     [UIStackView createWithAxis:UILayoutConstraintAxisHorizontal
@@ -72,9 +89,9 @@
                    corderRadius:8.0];
     
     UIStackView *jokeSetupStackView =
-    [UIStackView createWithAxis:UILayoutConstraintAxisHorizontal
-                   distribution:UIStackViewDistributionFillEqually
-                      alignment:UIStackViewAlignmentFill
+    [UIStackView createWithAxis:UILayoutConstraintAxisVertical
+                   distribution:UIStackViewDistributionFillProportionally
+                      alignment:UIStackViewAlignmentCenter
                         spacing:5.0
                     borderWidth:2.0
                    corderRadius:8.0];
@@ -86,11 +103,15 @@
                         spacing:5.0
                     borderWidth:0.0
                    corderRadius:0.0];
-        
+    
     [jokeTitleStackView addArrangedSubview:jokeIdTitleLabel];
     [jokeTitleStackView addArrangedSubview:jokeIdValueLabel];
     [jokeTypeStackView addArrangedSubview:jokeTypeTitleLabel];
     [jokeTypeStackView addArrangedSubview:jokeTypeValueLabel];
+    
+    [jokeSetupStackView addArrangedSubview:jokeSetupTitleLabel];
+    [jokeSetupStackView addArrangedSubview:jokeSetupValueLabel];
+    [jokeSetupStackView addArrangedSubview:[UIView new]];
     
     UIStackView *rootStackView =
     [UIStackView createWithAxis:UILayoutConstraintAxisVertical
@@ -106,6 +127,11 @@
     
     [self.view addSubview:rootStackView];
     UILayoutGuide *guide = self.view.safeAreaLayoutGuide;
+    
+    //    [NSLayoutConstraint activateConstraints:@[
+    //
+    //    ]];
+        
     [rootStackView.leadingAnchor constraintEqualToAnchor:guide.leadingAnchor constant:24].active = YES;
     [rootStackView.trailingAnchor constraintEqualToAnchor:guide.trailingAnchor constant:-24].active = YES;
     [rootStackView.topAnchor constraintEqualToAnchor:guide.topAnchor constant:48].active = YES;
@@ -116,10 +142,23 @@
     [jokeTypeTitleLabel.leadingAnchor constraintEqualToAnchor:rootStackView.leadingAnchor constant:16].active = YES;
     [jokeTypeValueLabel.trailingAnchor constraintEqualToAnchor:rootStackView.trailingAnchor constant:-16].active = YES;
     
+    [jokeSetupTitleLabel.leadingAnchor constraintEqualToAnchor:jokeSetupStackView.leadingAnchor constant:16].active = YES;
+    [jokeSetupTitleLabel.trailingAnchor constraintEqualToAnchor:jokeSetupStackView.trailingAnchor constant:-16].active = YES;
+    
+    [jokeSetupValueLabel.leadingAnchor constraintEqualToAnchor:jokeSetupStackView.leadingAnchor constant:16].active = YES;
+    [jokeSetupValueLabel.trailingAnchor constraintEqualToAnchor:jokeSetupStackView.trailingAnchor constant:-16].active = YES;
+    [jokeSetupValueLabel.bottomAnchor constraintEqualToAnchor:jokeSetupStackView.bottomAnchor constant:-24].active = YES;
+    [jokeSetupValueLabel.topAnchor constraintEqualToAnchor:jokeSetupTitleLabel.bottomAnchor].active = YES;
+        
+    [jokeSetupTitleLabel.heightAnchor constraintEqualToConstant:61].active = YES;
+    [jokeSetupValueLabel.heightAnchor constraintEqualToConstant:159].active = YES;
+    
     [jokeTitleStackView.heightAnchor constraintEqualToConstant:64].active = YES;
     [jokeTypeStackView.heightAnchor constraintEqualToConstant:64].active = YES;
     [jokeSetupStackView.heightAnchor constraintEqualToConstant:244].active = YES;
     [jokeActionStackView.heightAnchor constraintEqualToConstant:64].active = YES;
+    
+
 }
 
 - (void)viewDidLayoutSubviews {
