@@ -10,18 +10,19 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class UILabelPadded;
 @interface UILabel (UILabelFactory)
 
-+ (UILabel *)createWith:(NSString *)text;
++ (UILabelPadded *)createWith:(NSString *)text;
 
-+ (UILabel *)createWith:(NSString *)text
++ (UILabelPadded *)createWith:(NSString *)text
           textAlignment:(NSTextAlignment)alignment;
 
-+ (UILabel *)createWith:(NSString *)text
++ (UILabelPadded *)createWith:(NSString *)text
           textAlignment:(NSTextAlignment)alignment
             textPostfix:(NSString *)textExtra;
 
-+ (UILabel *)createWith:(NSString *)text
++ (UILabelPadded *)createWith:(NSString *)text
           textAlignment:(NSTextAlignment)alignment
               textColor:(UIColor *)color
                    font:(UIFont *)font;
