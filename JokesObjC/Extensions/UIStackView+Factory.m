@@ -42,4 +42,24 @@
     return stackView;
 }
 
++ (nonnull UIStackView *)
+    createWithAxis:(UILayoutConstraintAxis)axis
+      distribution:(UIStackViewDistribution)distribution
+         alignment:(UIStackViewAlignment)alignment
+           spacing:(CGFloat)spacing
+       borderWidth:(CGFloat)borderWidth
+      corderRadius:(CGFloat)corderRadius
+        background:(UIColor *)backgroundColor {
+    
+    UIStackView *stackView =
+        [UIStackView createWithAxis:axis
+                       distribution:distribution
+                          alignment:alignment
+                            spacing:spacing
+                        borderWidth:borderWidth
+                       corderRadius:corderRadius];
+    stackView.backgroundColor = backgroundColor;
+    return stackView;
+}
+
 @end

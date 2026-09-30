@@ -26,6 +26,15 @@ NS_ASSUME_NONNULL_BEGIN
     borderWidth:(CGFloat)borderWidth
    corderRadius:(CGFloat)corderRadius;
 
++ (nonnull UIStackView *)
+    createWithAxis:(UILayoutConstraintAxis)axis
+      distribution:(UIStackViewDistribution)distribution
+         alignment:(UIStackViewAlignment)alignment
+           spacing:(CGFloat)spacing
+       borderWidth:(CGFloat)borderWidth
+      corderRadius:(CGFloat)corderRadius
+        background:(UIColor *)backgroundColor;
+
 @end
 
 NS_ASSUME_NONNULL_END
