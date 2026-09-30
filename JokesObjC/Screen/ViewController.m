@@ -99,7 +99,8 @@
                       alignment:UIStackViewAlignmentFill
                         spacing:5.0
                     borderWidth:2.0
-                   corderRadius:8.0];
+                   corderRadius:8.0
+                     background:[UIColor jkWhiteColor]];
     
     UIStackView *jokeTypeStackView =
     [UIStackView createWithAxis:UILayoutConstraintAxisHorizontal
@@ -107,7 +108,8 @@
                       alignment:UIStackViewAlignmentFill
                         spacing:5.0
                     borderWidth:2.0
-                   corderRadius:8.0];
+                   corderRadius:8.0
+                     background:[UIColor jkWhiteColor]];
     
     UIStackView *jokeSetupStackView =
     [UIStackView createWithAxis:UILayoutConstraintAxisVertical
@@ -115,7 +117,8 @@
                       alignment:UIStackViewAlignmentCenter
                         spacing:5.0
                     borderWidth:2.0
-                   corderRadius:8.0];
+                   corderRadius:8.0
+                     background:[UIColor jkPinkColor]];
     
     UIStackView *jokeActionStackView =
     [UIStackView createWithAxis:UILayoutConstraintAxisHorizontal
