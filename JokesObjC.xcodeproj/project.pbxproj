@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		CE135312304EAC5800CA1D87 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = CE135311304EAC5800CA1D87 /* UIView+Extension.m */; };
 		CEA13E4D3061201F00C22E22 /* UILabelPadded.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA13E4C3061201F00C22E22 /* UILabelPadded.m */; };
+		CEE35A9B306D435600ABDAD8 /* YPNetworkClient.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE35A9A306D435600ABDAD8 /* YPNetworkClient.m */; };
+		CEE35A9E306D445300ABDAD8 /* YPNetworkResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE35A9D306D445300ABDAD8 /* YPNetworkResponse.m */; };
 		CEF6D9E630494B3A0081C24B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEF6D9DA30494B3A0081C24B /* Assets.xcassets */; };
 		CEF6D9E830494B3A0081C24B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF6D9DD30494B3A0081C24B /* LaunchScreen.storyboard */; };
 		CEF6D9EA30494B3A0081C24B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF6D9D930494B3A0081C24B /* AppDelegate.m */; };
@@ -31,6 +33,10 @@
 		CE135311304EAC5800CA1D87 /* UIView+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		CEA13E4B3061201F00C22E22 /* UILabelPadded.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UILabelPadded.h; sourceTree = "<group>"; };
 		CEA13E4C3061201F00C22E22 /* UILabelPadded.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UILabelPadded.m; sourceTree = "<group>"; };
+		CEE35A99306D435600ABDAD8 /* YPNetworkClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YPNetworkClient.h; sourceTree = "<group>"; };
+		CEE35A9A306D435600ABDAD8 /* YPNetworkClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YPNetworkClient.m; sourceTree = "<group>"; };
+		CEE35A9C306D445300ABDAD8 /* YPNetworkResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YPNetworkResponse.h; sourceTree = "<group>"; };
+		CEE35A9D306D445300ABDAD8 /* YPNetworkResponse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YPNetworkResponse.m; sourceTree = "<group>"; };
 		CEF6D9BB30494B220081C24B /* JokesObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JokesObjC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEF6D9D830494B3A0081C24B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CEF6D9D930494B3A0081C24B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -69,6 +75,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CEE35A95306D3C6400ABDAD8 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				CEE35A99306D435600ABDAD8 /* YPNetworkClient.h */,
+				CEE35A9A306D435600ABDAD8 /* YPNetworkClient.m */,
+				CEE35A9C306D445300ABDAD8 /* YPNetworkResponse.h */,
+				CEE35A9D306D445300ABDAD8 /* YPNetworkResponse.m */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		CEF6D9B230494B220081C24B = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +110,7 @@
 				CEF6D9FE3049637A0081C24B /* Interop */,
 				CEF6D9F130494B960081C24B /* Screen */,
 				CEF6DA00304963B70081C24B /* Helpers */,
+				CEE35A95306D3C6400ABDAD8 /* Network */,
 				CEF6D9F730495F4F0081C24B /* Extensions */,
 				CEF6D9F030494B7C0081C24B /* Resources */,
 				CEF6D9DE30494B3A0081C24B /* main.m */,
@@ -261,8 +279,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEE35A9E306D445300ABDAD8 /* YPNetworkResponse.m in Sources */,
 				CEA13E4D3061201F00C22E22 /* UILabelPadded.m in Sources */,
 				CEF6DA0D304982830081C24B /* UIStackView+Factory.m in Sources */,
+				CEE35A9B306D435600ABDAD8 /* YPNetworkClient.m in Sources */,
 				CEF6DA02304963DD0081C24B /* ViewControllerPreviewHelper.swift in Sources */,
 				CE135312304EAC5800CA1D87 /* UIView+Extension.m in Sources */,
 				CEF6D9EA30494B3A0081C24B /* AppDelegate.m in Sources */,
