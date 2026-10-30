@@ -76,7 +76,7 @@
     
     [jokeSetupValueLabel addBorderTo:Top borderWidth:2 borderColor:[UIColor jkBlackColor]];
     [jokeSetupValueLabel addBorderTo:Bottom borderWidth:2 borderColor:[UIColor jkBlackColor]];
-            
+    
     jokeRefreshButton = [UIButton new];
     jokeRefreshButton.translatesAutoresizingMaskIntoConstraints = NO;
     [jokeRefreshButton setImage:[UIImage systemImageNamed:@"arrow.trianglehead.2.clockwise.rotate.90"] forState:UIControlStateNormal];
@@ -85,6 +85,10 @@
     jokeRefreshButton.layer.borderWidth = 2;
     jokeRefreshButton.layer.cornerRadius = 8;
     
+    [jokeRefreshButton addTarget:self
+                          action:@selector(refresh)
+                forControlEvents:UIControlEventTouchUpInside];
+    
     jokePunchlineButton = [UIButton new];
     jokePunchlineButton.backgroundColor = [UIColor greenColor];
     [jokePunchlineButton setTitle:@"Show punchline" forState:UIControlStateNormal];
@@ -92,6 +96,10 @@
     jokePunchlineButton.translatesAutoresizingMaskIntoConstraints = NO;
     jokePunchlineButton.layer.borderWidth = 2;
     jokePunchlineButton.layer.cornerRadius = 8;
+    
+    [jokePunchlineButton addTarget:self
+                          action:@selector(showPunchline)
+                forControlEvents:UIControlEventTouchUpInside];
     
     UIStackView *jokeTitleStackView =
     [UIStackView createWithAxis:UILayoutConstraintAxisHorizontal
@@ -186,6 +194,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+}
+
+- (void)showPunchline {
+    NSLog(@"showPunchline fired");
+}
+
+- (void)refresh {
+    NSLog(@"refresh fired");
 }
 
 
