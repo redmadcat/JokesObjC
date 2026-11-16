@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		CE135312304EAC5800CA1D87 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = CE135311304EAC5800CA1D87 /* UIView+Extension.m */; };
 		CE2B3EC830A5F25B0026C961 /* YPJokesLoaderService.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2B3EC730A5F25B0026C961 /* YPJokesLoaderService.m */; };
+		CE2B3ED130AAE5430026C961 /* YPJokesFactoryService.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2B3ED030AAE5430026C961 /* YPJokesFactoryService.m */; };
+		CE2B3ED730AAE9FF0026C961 /* YPJoke.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2B3ED630AAE9FF0026C961 /* YPJoke.m */; };
 		CEA13E4D3061201F00C22E22 /* UILabelPadded.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA13E4C3061201F00C22E22 /* UILabelPadded.m */; };
 		CEE35A9B306D435600ABDAD8 /* YPNetworkClient.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE35A9A306D435600ABDAD8 /* YPNetworkClient.m */; };
 		CEE35A9E306D445300ABDAD8 /* YPNetworkResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE35A9D306D445300ABDAD8 /* YPNetworkResponse.m */; };
@@ -36,6 +38,12 @@
 		CE2B3EC730A5F25B0026C961 /* YPJokesLoaderService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YPJokesLoaderService.m; sourceTree = "<group>"; };
 		CE2B3EC930A5F2A90026C961 /* YPJokesLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YPJokesLoader.h; sourceTree = "<group>"; };
 		CE2B3ECA30A7427D0026C961 /* YPNetworkRouting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YPNetworkRouting.h; sourceTree = "<group>"; };
+		CE2B3ECF30AAE5430026C961 /* YPJokesFactoryService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YPJokesFactoryService.h; sourceTree = "<group>"; };
+		CE2B3ED030AAE5430026C961 /* YPJokesFactoryService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YPJokesFactoryService.m; sourceTree = "<group>"; };
+		CE2B3ED230AAE55F0026C961 /* YPJokesFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YPJokesFactory.h; sourceTree = "<group>"; };
+		CE2B3ED330AAE7B20026C961 /* YPJokesFactoryDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YPJokesFactoryDelegate.h; sourceTree = "<group>"; };
+		CE2B3ED530AAE9FF0026C961 /* YPJoke.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YPJoke.h; sourceTree = "<group>"; };
+		CE2B3ED630AAE9FF0026C961 /* YPJoke.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YPJoke.m; sourceTree = "<group>"; };
 		CEA13E4B3061201F00C22E22 /* UILabelPadded.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UILabelPadded.h; sourceTree = "<group>"; };
 		CEA13E4C3061201F00C22E22 /* UILabelPadded.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UILabelPadded.m; sourceTree = "<group>"; };
 		CEE35A99306D435600ABDAD8 /* YPNetworkClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YPNetworkClient.h; sourceTree = "<group>"; };
@@ -86,8 +94,21 @@
 				CE2B3EC930A5F2A90026C961 /* YPJokesLoader.h */,
 				CE2B3EC630A5F25B0026C961 /* YPJokesLoaderService.h */,
 				CE2B3EC730A5F25B0026C961 /* YPJokesLoaderService.m */,
+				CE2B3ED230AAE55F0026C961 /* YPJokesFactory.h */,
+				CE2B3ECF30AAE5430026C961 /* YPJokesFactoryService.h */,
+				CE2B3ED030AAE5430026C961 /* YPJokesFactoryService.m */,
+				CE2B3ED330AAE7B20026C961 /* YPJokesFactoryDelegate.h */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		CE2B3ED430AAE9E10026C961 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CE2B3ED530AAE9FF0026C961 /* YPJoke.h */,
+				CE2B3ED630AAE9FF0026C961 /* YPJoke.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		CEE35A95306D3C6400ABDAD8 /* Network */ = {
@@ -122,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				CEF6D9EE30494B570081C24B /* App */,
+				CE2B3ED430AAE9E10026C961 /* Model */,
 				CEF6D9EF30494B600081C24B /* Scene */,
 				CEF6D9FE3049637A0081C24B /* Interop */,
 				CEF6D9F130494B960081C24B /* Screen */,
@@ -296,6 +318,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE2B3ED130AAE5430026C961 /* YPJokesFactoryService.m in Sources */,
 				CEE35A9E306D445300ABDAD8 /* YPNetworkResponse.m in Sources */,
 				CEA13E4D3061201F00C22E22 /* UILabelPadded.m in Sources */,
 				CEF6DA0D304982830081C24B /* UIStackView+Factory.m in Sources */,
@@ -309,6 +332,7 @@
 				CEF6D9EC30494B3A0081C24B /* SceneDelegate.m in Sources */,
 				CEF6D9ED30494B3A0081C24B /* ViewController.m in Sources */,
 				CEF6D9FD304961360081C24B /* UIColor+JKColor.m in Sources */,
+				CE2B3ED730AAE9FF0026C961 /* YPJoke.m in Sources */,
 				CEF6D9FA30495FDC0081C24B /* UIFont+Roboto.m in Sources */,
 				CE2B3EC830A5F25B0026C961 /* YPJokesLoaderService.m in Sources */,
 			);

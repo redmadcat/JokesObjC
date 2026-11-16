@@ -6,8 +6,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "YPJokesFactoryDelegate.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <YPJokesFactoryDelegate>
 
 
 @end

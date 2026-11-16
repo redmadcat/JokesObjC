@@ -6,10 +6,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "YPJokesFactory.h"
+@class YPJokesLoader;
+@class YPJokesFactoryDelegate;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface YPJokesFactoryService : NSObject
+@interface YPJokesFactoryService : NSObject <YPJokesFactory>
+
+- (instancetype)initFactoryWith:(YPJokesLoader *)loader delegate:(YPJokesFactoryDelegate *)delegate;
 
 @end
 

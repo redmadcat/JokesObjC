@@ -8,5 +8,11 @@
 #ifndef YPJokesFactory_h
 #define YPJokesFactory_h
 
+@protocol YPJokesFactory
+
+@required
+- (void)requestNextJoke;
+
+@end
 
 #endif /* YPJokesFactory_h */

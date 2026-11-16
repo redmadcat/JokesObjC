@@ -9,6 +9,7 @@
 #import "YPNetworkRouting.h"
 #import "YPNetworkClient.h"
 #import "YPNetworkResponse.h"
+#import "YPJoke.h"
 
 @implementation YPJokesLoaderService
 
@@ -28,8 +29,8 @@ id<YPNetworkRouting> networkClient;
 - (void)loadRandomJoke:(CompletionHandler)handler {
     [networkClient fetch:[self url] withCompletion:^(YPNetworkResponse *response) {
         NSError *error = nil;
+        NSMutableArray *result = [NSMutableArray new];
         id jsonObject;
-        
         switch (response.result) {
             case Success:
                 jsonObject = [NSJSONSerialization
@@ -41,7 +42,18 @@ id<YPNetworkRouting> networkClient;
                 }
                 
                 if ([jsonObject isKindOfClass:[NSDictionary class]]) {
-                    NSDictionary *result = (NSDictionary *)jsonObject;
+                    NSArray *jokesArray = jsonObject[@"directory"];
+                    if ([jokesArray isKindOfClass:[NSArray class]]) {
+                        for (NSDictionary *dictionary in jokesArray) {
+                            YPJoke *joke = [[YPJoke alloc] init];
+                            joke.id = [[dictionary objectForKey:@"id"] integerValue];
+                            joke.type = [dictionary objectForKey:@"type"];
+                            joke.setup = [dictionary objectForKey:@"setup"];
+                            joke.punchline = [dictionary objectForKey:@"punchline"];
+                            [result addObject: joke];
+                        }
+                    }
+//                    NSDictionary *result = (NSDictionary *)jsonObject;
                     handler([response initSuccess:result]);
                 }
                 break;

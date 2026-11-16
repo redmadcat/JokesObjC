@@ -204,5 +204,12 @@
     NSLog(@"refresh fired");
 }
 
+- (void)didReceiveNextJoke:(YPJoke *)joke {
+    
+}
+
+- (void)didFailToLoadData:(NSError *)error {
+    
+}
 
 @end
