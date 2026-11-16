@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CE135312304EAC5800CA1D87 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = CE135311304EAC5800CA1D87 /* UIView+Extension.m */; };
+		CE2B3EC830A5F25B0026C961 /* YPJokesLoaderService.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2B3EC730A5F25B0026C961 /* YPJokesLoaderService.m */; };
 		CEA13E4D3061201F00C22E22 /* UILabelPadded.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA13E4C3061201F00C22E22 /* UILabelPadded.m */; };
 		CEE35A9B306D435600ABDAD8 /* YPNetworkClient.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE35A9A306D435600ABDAD8 /* YPNetworkClient.m */; };
 		CEE35A9E306D445300ABDAD8 /* YPNetworkResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE35A9D306D445300ABDAD8 /* YPNetworkResponse.m */; };
@@ -31,6 +32,10 @@
 /* Begin PBXFileReference section */
 		CE135310304EAC5800CA1D87 /* UIView+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		CE135311304EAC5800CA1D87 /* UIView+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		CE2B3EC630A5F25B0026C961 /* YPJokesLoaderService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YPJokesLoaderService.h; sourceTree = "<group>"; };
+		CE2B3EC730A5F25B0026C961 /* YPJokesLoaderService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YPJokesLoaderService.m; sourceTree = "<group>"; };
+		CE2B3EC930A5F2A90026C961 /* YPJokesLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YPJokesLoader.h; sourceTree = "<group>"; };
+		CE2B3ECA30A7427D0026C961 /* YPNetworkRouting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YPNetworkRouting.h; sourceTree = "<group>"; };
 		CEA13E4B3061201F00C22E22 /* UILabelPadded.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UILabelPadded.h; sourceTree = "<group>"; };
 		CEA13E4C3061201F00C22E22 /* UILabelPadded.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UILabelPadded.m; sourceTree = "<group>"; };
 		CEE35A99306D435600ABDAD8 /* YPNetworkClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YPNetworkClient.h; sourceTree = "<group>"; };
@@ -75,9 +80,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE2B3EC530A5F2040026C961 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				CE2B3EC930A5F2A90026C961 /* YPJokesLoader.h */,
+				CE2B3EC630A5F25B0026C961 /* YPJokesLoaderService.h */,
+				CE2B3EC730A5F25B0026C961 /* YPJokesLoaderService.m */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		CEE35A95306D3C6400ABDAD8 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				CE2B3ECA30A7427D0026C961 /* YPNetworkRouting.h */,
 				CEE35A99306D435600ABDAD8 /* YPNetworkClient.h */,
 				CEE35A9A306D435600ABDAD8 /* YPNetworkClient.m */,
 				CEE35A9C306D445300ABDAD8 /* YPNetworkResponse.h */,
@@ -109,6 +125,7 @@
 				CEF6D9EF30494B600081C24B /* Scene */,
 				CEF6D9FE3049637A0081C24B /* Interop */,
 				CEF6D9F130494B960081C24B /* Screen */,
+				CE2B3EC530A5F2040026C961 /* Service */,
 				CEF6DA00304963B70081C24B /* Helpers */,
 				CEE35A95306D3C6400ABDAD8 /* Network */,
 				CEF6D9F730495F4F0081C24B /* Extensions */,
@@ -293,6 +310,7 @@
 				CEF6D9ED30494B3A0081C24B /* ViewController.m in Sources */,
 				CEF6D9FD304961360081C24B /* UIColor+JKColor.m in Sources */,
 				CEF6D9FA30495FDC0081C24B /* UIFont+Roboto.m in Sources */,
+				CE2B3EC830A5F25B0026C961 /* YPJokesLoaderService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
