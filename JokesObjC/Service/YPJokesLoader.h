@@ -15,7 +15,7 @@ typedef void (^CompletionHandler)(YPNetworkResponse *response);
 @protocol YPJokesLoader
 
 @required
-- (void)load:(CompletionHandler)handler;
+- (void)loadRandomJoke:(CompletionHandler)handler;
 
 @end
 

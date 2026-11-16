@@ -25,7 +25,7 @@ id<YPNetworkRouting> networkClient;
     return [self init:[YPNetworkClient new]];
 }
 
-- (void)load:(CompletionHandler)handler {
+- (void)loadRandomJoke:(CompletionHandler)handler {
     [networkClient fetch:[self url] withCompletion:^(YPNetworkResponse *response) {
         NSError *error = nil;
         id jsonObject;
